@@ -1,0 +1,130 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<LangVersion>latest</LangVersion>
+		<OutputType>Library</OutputType>
+		<RootNamespace>Customization.Tasks</RootNamespace>
+		<AssemblyName>Customization.Tasks</AssemblyName>
+		<SccProjectName>SAK</SccProjectName>
+		<SccLocalPath>SAK</SccLocalPath>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccProvider>SAK</SccProvider>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<OutputPath>..\..\..\Exe\SolutionAssemblies\</OutputPath>
+		<AssemblySearchPaths>..\..\..\Exe\;..\..\..\Exe\SolutionAssemblies;$(AssemblySearchPaths)</AssemblySearchPaths>
+		<UseWPF>true</UseWPF>
+		<PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="DevExpress.Data.v22.1">
+		  <HintPath>..\..\..\Exe\DevExpress.Data.v22.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Docs.v22.1">
+		  <HintPath>..\..\..\Exe\DevExpress.Docs.v22.1.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Office.v22.1.Core">
+		  <HintPath>..\..\..\Exe\DevExpress.Office.v22.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Pdf.v22.1.Core">
+		  <HintPath>..\..\..\Exe\DevExpress.Pdf.v22.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Pdf.v22.1.Drawing">
+		  <HintPath>..\..\..\Exe\DevExpress.Pdf.v22.1.Drawing.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Spreadsheet.v22.1.Core">
+		  <HintPath>..\..\..\Exe\DevExpress.Spreadsheet.v22.1.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DevExpress.Xpf.Grid.v22.1.Extensions">
+		  <HintPath>..\..\..\Exe\DevExpress.Xpf.Grid.v22.1.Extensions.dll</HintPath>
+		</Reference>
+		<Reference Include="Thermo.Framework.Core">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.Framework.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.Framework.Server">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.Framework.Server.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.Framework.Utilities">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.Framework.Utilities.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.Informatics.Common.Forms.Core">
+			<HintPath>Thermo.Informatics.Common.Forms.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Common">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Common.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Core">
+			<HintPath>Thermo.SampleManager.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Internal.ObjectModel">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Internal.ObjectModel.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Library">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Library.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.ObjectModel">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.ObjectModel.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Server">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Server.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Server.Mvc">
+			<HintPath>Thermo.SampleManager.Server.Mvc.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Server.ObjectSupport">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Server.ObjectSupport.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Server.Services">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Server.Services.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Server.Workflow">
+			<HintPath>Thermo.SampleManager.Server.Workflow.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Tasks">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Tasks.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Tasks.EntityDefinition">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Tasks.EntityDefinition.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Tasks.FormDefinition">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Tasks.FormDefinition.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

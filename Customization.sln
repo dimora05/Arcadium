@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomizationObjectModel", "CustomizationObjectModel\CustomizationObjectModel.csproj", "{261A7656-C235-4BE3-A66B-6BAA46413B40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomizationTasks", "CustomizationTasks\CustomizationTasks.csproj", "{EBE25653-E355-4486-B681-E0387EAFFBF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{261A7656-C235-4BE3-A66B-6BAA46413B40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{261A7656-C235-4BE3-A66B-6BAA46413B40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{261A7656-C235-4BE3-A66B-6BAA46413B40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{261A7656-C235-4BE3-A66B-6BAA46413B40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE25653-E355-4486-B681-E0387EAFFBF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE25653-E355-4486-B681-E0387EAFFBF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE25653-E355-4486-B681-E0387EAFFBF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE25653-E355-4486-B681-E0387EAFFBF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87B371DB-2638-4D2B-9074-9EC9D84E9E41}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfslims.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CustomizationObjectModel\\CustomizationObjectModel.csproj
+		SccProjectName1 = CustomizationObjectModel
+		SccLocalPath1 = CustomizationObjectModel
+		SccProjectUniqueName2 = CustomizationTasks\\CustomizationTasks.csproj
+		SccProjectName2 = CustomizationTasks
+		SccLocalPath2 = CustomizationTasks
+	EndGlobalSection
+EndGlobal

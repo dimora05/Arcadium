@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "CustomizationTasks": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Thermo\\SampleManager\\Server\\VGSM\\Exe\\SampleManager.exe"
+    }
+  }
+}

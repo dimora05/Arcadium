@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<LangVersion>latest</LangVersion>
+		<OutputType>Library</OutputType>
+		<RootNamespace>Customization.ObjectModel</RootNamespace>
+		<AssemblyName>Customization.ObjectModel</AssemblyName>
+		<SccProjectName>SAK</SccProjectName>
+		<SccLocalPath>SAK</SccLocalPath>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccProvider>SAK</SccProvider>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<OutputPath>..\..\..\Exe\SolutionAssemblies\</OutputPath>
+		<AssemblySearchPaths>..\..\..\Exe\;..\..\..\Exe\SolutionAssemblies;$(AssemblySearchPaths)</AssemblySearchPaths>
+		<UseWPF>true</UseWPF>
+		<PlatformTarget>x86</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="Thermo.Framework.Core">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.Framework.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.Framework.Server">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.Framework.Server.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.Framework.Utilities">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.Framework.Utilities.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Common">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Common.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Core">
+			<HintPath>..\..\..\Exe\Thermo.SampleManager.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Internal.ObjectModel">
+			<HintPath>..\..\..\Exe\Thermo.SampleManager.Internal.ObjectModel.dll</HintPath>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Library">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Library.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.ObjectModel">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.ObjectModel.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Thermo.SampleManager.Tasks.EntityDefinition">
+			<SpecificVersion>False</SpecificVersion>
+			<HintPath>Thermo.SampleManager.Tasks.EntityDefinition.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>
