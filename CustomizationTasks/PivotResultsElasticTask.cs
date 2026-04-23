@@ -1,4 +1,4 @@
-﻿/*
+/*
     PivotResultsElasticTask
     Autor: Danny Loria
     Fecha: 2025-10-27
@@ -255,10 +255,6 @@ namespace Customization.Tasks
                 return;
             }
 
-            IQuery q = EntityManager.CreateQuery("LOCATION");
-            q.AddEquals("LocationType", "PROCESO");
-            q.AddAnd();
-            q.AddEquals("ParentLocation", planta.IdentityString);
             SetHierarchyEnabled(planta, null, null);
         }
 
@@ -275,10 +271,6 @@ namespace Customization.Tasks
                 return;
             }
 
-            IQuery q = EntityManager.CreateQuery("LOCATION");
-            q.AddEquals("LocationType", "ETAPA");
-            q.AddAnd();
-            q.AddEquals("ParentLocation", proceso.IdentityString);
             var planta2 = form.pebPlanta?.Entity ?? ResolveEntityByValue("LOCATION", form.pebPlanta?.Value);
             SetHierarchyEnabled(planta2, proceso, null);
         }
@@ -296,8 +288,6 @@ namespace Customization.Tasks
                 return;
             }
 
-            IQuery q = EntityManager.CreateQuery("SAMPLE_POINT");
-            q.AddEquals("PointLocation", etapa.IdentityString);
             var planta3 = form.pebPlanta?.Entity ?? ResolveEntityByValue("LOCATION", form.pebPlanta?.Value);
             var proceso3 = form.pebProceso?.Entity ?? ResolveEntityByValue("LOCATION", form.pebProceso?.Value);
             SetHierarchyEnabled(planta3, proceso3, etapa);
@@ -861,27 +851,51 @@ namespace Customization.Tasks
 
         private void SetHierarchyEnabled(IEntity planta, IEntity proceso, IEntity etapa)
         {
-            // Aseguramos que todos los controles estén siempre habilitados
+            // Aseguramos que la planta siempre esté habilitada
             if (form.pebPlanta is VisualControl vcPlanta) vcPlanta.Enabled = true;
-            if (form.pebProceso is VisualControl vcProc) vcProc.Enabled = true;
-            if (form.pebEtapa is VisualControl vcEtapa) vcEtapa.Enabled = true;
-            if (form.pebPuntoMuestreo is VisualControl vcPunto) vcPunto.Enabled = true;
 
-            // Filtro para Proceso (si hay planta, filtra por ella; si no, muestra todos los procesos)
+            // Filtro para Proceso (requiere planta)
             IQuery qP = EntityManager.CreateQuery("LOCATION");
             qP.AddEquals("LocationType", "PROCESO");
-            if (planta != null) qP.AddEquals("ParentLocation", planta.IdentityString);
+            if (planta != null)
+            {
+                if (form.pebProceso is VisualControl vcProc) vcProc.Enabled = true;
+                qP.AddEquals("ParentLocation", planta.IdentityString);
+            }
+            else
+            {
+                if (form.pebProceso is VisualControl vcProc) vcProc.Enabled = false;
+                qP.AddEquals("Identity", "DUMMY_NO_DATA_XYZ"); // Evita cargar todos los procesos si no hay planta
+            }
             form.pebProceso.Browse = BrowseFactory.CreateEntityBrowse(qP);
 
-            // Filtro para Etapa (si hay proceso, filtra por él; si no, muestra todas las etapas)
+            // Filtro para Etapa (requiere proceso)
             IQuery qE = EntityManager.CreateQuery("LOCATION");
             qE.AddEquals("LocationType", "ETAPA");
-            if (proceso != null) qE.AddEquals("ParentLocation", proceso.IdentityString);
+            if (proceso != null)
+            {
+                if (form.pebEtapa is VisualControl vcEtapa) vcEtapa.Enabled = true;
+                qE.AddEquals("ParentLocation", proceso.IdentityString);
+            }
+            else
+            {
+                if (form.pebEtapa is VisualControl vcEtapa) vcEtapa.Enabled = false;
+                qE.AddEquals("Identity", "DUMMY_NO_DATA_XYZ"); // Evita cargar todas las etapas si no hay proceso
+            }
             form.pebEtapa.Browse = BrowseFactory.CreateEntityBrowse(qE);
 
-            // Filtro para Punto de Muestreo (si hay etapa, filtra por ella; si no, muestra todos los puntos)
+            // Filtro para Punto de Muestreo (requiere etapa)
             IQuery qS = EntityManager.CreateQuery("SAMPLE_POINT");
-            if (etapa != null) qS.AddEquals("PointLocation", etapa.IdentityString);
+            if (etapa != null)
+            {
+                if (form.pebPuntoMuestreo is VisualControl vcPunto) vcPunto.Enabled = true;
+                qS.AddEquals("PointLocation", etapa.IdentityString);
+            }
+            else
+            {
+                if (form.pebPuntoMuestreo is VisualControl vcPunto) vcPunto.Enabled = false;
+                qS.AddEquals("Identity", "DUMMY_NO_DATA_XYZ"); // Evita cargar la pesada tabla entera de SAMPLE_POINT
+            }
             form.pebPuntoMuestreo.Browse = BrowseFactory.CreateEntityBrowse(qS);
         }
 
